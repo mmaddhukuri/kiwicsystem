@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KWIC System</title>
+<style>
+#output {
+    margin-top: 20px;
+}
+</style>
+</head>
+<body>
+<h1>KWIC System</h1>
+<div>
+    <label for="inputLines">Enter Input Lines:</label><br>
+    <textarea id="inputLines" rows="4" cols="50"></textarea><br>
+    <button onclick="generateKWIC()">Generate Output Lines</button>
+</div>
+<div id="output">
+    <h2>KWIC Index:</h2>
+    <ul id="kwicList"></ul>
+</div>
+
+<script src="CircularShifter.js"></script>
+<script src="NoiseFilter.js"></script>
+<script src="Sort.js"></script>
+<script src="Output.js"></script>
+<script src="KWICMain.js"></script>
+<script>
+function generateKWIC() {
+    const inputLines = document.getElementById('inputLines').value.trim().split('\n');
+    const noiseWords = ["a", "an", "the", "and", "or", "of", "to", "be", "is", "in", "out", "by", "as", "at", "off"];
+    KWICMain.run(inputLines, noiseWords);
+}
+</script>
+</body>
+</html>
