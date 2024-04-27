@@ -13,7 +13,7 @@ handlers:
   static_files: NoiseFilter.js
   upload: NoiseFilter.js # Map the URL path to the button.js file
 
-  - url: /Output.js
+- url: /Output.js
   static_files: Output.js
   upload: Output.js # Map the URL path to the button.js file
 
