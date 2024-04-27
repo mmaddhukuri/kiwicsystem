@@ -1,0 +1,30 @@
+runtime: python27 # Specify the runtime environment
+
+handlers:
+- url: /CircularShifter.js
+  static_files: CircularShifter.js
+  upload: CircularShifter.js # Map the URL path to the menu.js file
+
+- url: /KWICMain.js
+  static_files: KWICMain.js
+  upload: KWICMain.js # Map the URL path to the button.js file
+
+- url: /NoiseFilter.js
+  static_files: NoiseFilter.js
+  upload: NoiseFilter.js # Map the URL path to the button.js file
+
+  - url: /Output.js
+  static_files: Output.js
+  upload: Output.js # Map the URL path to the button.js file
+
+- url: /Sort.js
+  static_files: Sort.js
+  upload: Sort.js # Map the URL path to the click.js file
+
+- url: /
+  static_files: index.html
+  upload: index.html # Map the root URL path to the index.html file
+
+# Optional: Configure secure channels
+# secure: always
+# redirect_http_response_code: 301
