@@ -1,4 +1,4 @@
-runtime: python27 # Specify the runtime environment
+runtime: python38 # Specify the runtime environment
 
 handlers:
 - url: /CircularShifter.js
