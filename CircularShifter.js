@@ -1,10 +1,12 @@
 class CircularShifter {
     static shiftLines(inputLines) {
+        const noiseWords = new Set(["a", "an", "the", "and", "or", "of", "to", "be", "is", "in", "out", "by", "as", "at", "off"]);
         const shiftedLines = [];
         inputLines.forEach(line => {
             const words = line.split(' ');
-            for (let i = 0; i < words.length; i++) {
-                const shiftedWords = [...words.slice(i), ...words.slice(0, i)];
+            const filteredWords = words.filter(word => !noiseWords.has(word.toLowerCase()));
+            for (let i = 0; i < filteredWords.length; i++) {
+                const shiftedWords = [...filteredWords.slice(i), ...filteredWords.slice(0, i)];
                 shiftedLines.push(shiftedWords.join(' '));
             }
         });
